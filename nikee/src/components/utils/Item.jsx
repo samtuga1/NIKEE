@@ -25,7 +25,7 @@ function Item({ id, color, shadow, title, text, img, btn, rating, price }) {
         </div>
 
         <div className="flex items-center">
-            <img src={img} alt='img/item.img' className=""/>
+            <img src={img} alt='img/item.img' className="h-36"/>
         </div>
       </div>
     </>
