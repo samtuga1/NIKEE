@@ -6,9 +6,9 @@ function App() {
 
   return (
    <>
-   <main>
+   <main className='flex flex-col relative gap-16' >
     <Hero heroapi={heroapi} />
-   <Sales endpoint={popularsales} />
+   <Sales endpoint={popularsales} ifExists />
    <Sales endpoint={toprateslaes} />
    </main>
    
