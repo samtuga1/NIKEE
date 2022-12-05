@@ -1,10 +1,10 @@
 import { ShoppingBagIcon, StarIcon } from "@heroicons/react/24/solid";
 import React from "react";
 
-function Item({ id, color, shadow, title, text, img, btn, rating, price }) {
+function Item({ifExists, id, color, shadow, title, text, img, btn, rating, price }) {
   return (
     <>
-      <div className={`relative bg-gradient-to-b ${color} ${shadow} grid justify-items-center items-center`}>
+      <div className={`rounded-xl py-4 px-5 transition-all duration-700 ease-in-out w-full hover:scale-105 relative bg-gradient-to-b ${color} ${shadow}  ${ifExists ? 'justify-items-start' : 'justify-items-center'} grid justify-items-center items-center`}>
         <div className="grid justify-items-center items-center">
           <h1 className="text-slate-200 text-xl lg:text-lg md:text-base font-medium filter drop-shadow">{title}</h1>
           <p className="text-slate-200 filter drop-shadow font-normal text-base md:text-sm">{text}</p>
@@ -25,7 +25,7 @@ function Item({ id, color, shadow, title, text, img, btn, rating, price }) {
         </div>
 
         <div className="flex items-center">
-            <img src={img} alt='img/item.img' className="h-36"/>
+            <img src={img} alt='img/item.img' className="h-36 w-64 transitions-theme hover:-rotate-12"/>
         </div>
       </div>
     </>
