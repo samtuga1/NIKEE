@@ -1,6 +1,6 @@
 import React from "react";
 import Clips from "./utils/clips";
-import SocialLink from './utils/Socials';
+import SocialLink from "./utils/Socials";
 
 function Hero({
   heroapi: { title, subtitle, btntext, img, sociallinks, videos },
@@ -25,10 +25,10 @@ function Hero({
             </button>
             <div className="grid items-center gap-5 md:gap-3 top-[33vh] absolute lg:top-[27vh] left-[11%] xl:left-0 w-auto h-auto">
               {videos?.map((val, i) => (
-                <Clips key={i} imgsrc={val.imgsrc} clip={val.clip}/>
+                <Clips key={i} imgsrc={val.imgsrc} clip={val.clip} />
               ))}
             </div>
-            <div className="grid gap-3 md:gap-3 top-[33vh] lg:top-[27vh] right-0 absolute" >
+            <div className="grid gap-3 top-[33vh] lg:top-[27vh] right-0 absolute">
               {sociallinks.map((val, i) => (
                 <SocialLink key={i} icon={val.icon} />
               ))}
