@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.13",
+    "@splidejs/react-splide": "^0.7.12",
+    "@splidejs/splide": "^4.1.4",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
