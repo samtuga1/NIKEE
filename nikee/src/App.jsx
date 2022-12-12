@@ -1,5 +1,5 @@
 import "./App.css";
-import { Hero, Sales } from "./components";
+import { Hero, Sales, Stories } from "./components";
 import FlexContent from "./components/FlexContent";
 import {
   heroapi,
@@ -7,6 +7,7 @@ import {
   toprateslaes,
   highlight,
   sneaker,
+  story,
 } from "./data/data.js";
 
 function App() {
@@ -16,9 +17,9 @@ function App() {
         <Hero heroapi={heroapi} />
         <Sales endpoint={popularsales} ifExists />
         <FlexContent endpoint={highlight} ifExists />
-
         <Sales endpoint={toprateslaes} />
         <FlexContent endpoint={sneaker} />
+        <Stories story={story} />
       </main>
     </>
   );
