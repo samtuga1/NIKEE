@@ -1,12 +1,18 @@
 import { ChevronDoubleLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import React from "react";
+import { useDispatch } from "react-redux";
+import { setClearCartItems } from "../../app/CartSlice";
 
-function CartCount() {
+function CartCount({ onCartToggle }) {
+  const dispatch = useDispatch();
   return (
     <>
       <div className="bg-white flex h-11 items-center justify-between px-3 sticky top-0 left-0 right-0 w-full">
         <div className="flex gap-3 items-center">
-          <div className="grid items-center cursor-pointer">
+          <div
+            onClick={onCartToggle}
+            className="grid items-center cursor-pointer"
+          >
             <ChevronDoubleLeftIcon className="w-5 h-5 text-slate-900 hover:text-orange-500 stroke-[2] " />
           </div>
           <div className="grid items-center cursor-pointer">
@@ -20,6 +26,9 @@ function CartCount() {
         </div>
         <div className="flex items-center">
           <button
+            onClick={() => {
+              dispatch(setClearCartItems());
+            }}
             type="button"
             className="rounded bg-theme-cart active:scale-90 p-0.5"
           >

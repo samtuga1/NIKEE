@@ -7,9 +7,20 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import logo from "../assets/logo.png";
+import { useDispatch } from "react-redux";
+import { setOpenCart } from "../app/CartSlice";
 
 function Navbar() {
   const [navState, setNavState] = useState(false);
+  const dispatch = useDispatch();
+
+  const onCartToggle = () => {
+    dispatch(
+      setOpenCart({
+        cartState: true,
+      })
+    );
+  };
 
   const onScrollListener = () => {
     if (window.scrollY > 30) {
@@ -59,6 +70,7 @@ function Navbar() {
           </li>
           <li className="grid items-center">
             <button
+              onClick={onCartToggle}
               type="button"
               className="border-none outline-none active:scale-110 transition-all duration-300 relative"
             >
